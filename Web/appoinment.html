@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <style>   
+            Body {  
+              font-family: Calibri, Helvetica, sans-serif;  
+              background-color: pink;  
+            }  
+            button {   
+                   background-color: #4CAF50;   
+                   width: 100%;  
+                    color: orange;   
+                    padding: 15px;   
+                    margin: 10px 0px;   
+                    border: none;   
+                    cursor: pointer;   
+                     }   
+             form {   
+                    border: 3px solid #f1f1f1;   
+                }   
+             input[type=text], input[type=password] {   
+                    width: 100%;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px solid green;   
+                    box-sizing: border-box;   
+                }  
+             button:hover {   
+                    opacity: 0.9;  
+                     
+                }   
+              .cancelbtn {   
+                    width:auto;   
+                    padding: 10px 18px;  
+                    margin: 10px 5px;  
+                }   
+                    
+                 
+             .container {   
+                    padding: 25px;   
+                    background-color: lightblue;  
+                }   
+            </style>   
+            
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>News</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script>
+   
+      async function populateTable(){
+
+
+         const url = "http://127.0.0.1:8000/book/"
+
+         var response = await fetch(url,{
+            method:'GET',
+            headers:{
+               'Content-Type':'application/json',
+               'Authorization' : 'Bearer ' + sessionStorage.getItem('access')
+            },
+         }).then((response)=>response.json()).then((data)=>{
+
+            
+            
+            var table = this.document.getElementById("appTable").children.item(0);
+
+            var row = table.insertRow(0);
+
+            var cell1 = row.insertCell(0);
+
+            var cell2 = row.insertCell(1);
+            
+            var cell3 = row.insertCell(2);
+
+            var cell4 = row.insertCell(3);
+
+            cell1.innerHTML = "Name";
+            
+            cell2.innerHTML = "Date";
+            
+            cell3.innerHTML = "City";
+            
+            cell4.innerHTML = "Phone";
+
+            var ro, cel;
+
+            for(j=0 ; j<data.data.length; j++){
+
+               console.log(j)
+
+               ro = table.insertRow(-1);
+
+               cel = ro.insertCell(0);
+
+               cel.innerHTML = data.data[j].user;
+
+               cel = ro.insertCell(1);
+
+               cel.innerHTML = data.data[j].date.substring(0, 10);
+
+               cel = ro.insertCell(2);
+
+               cel.innerHTML = data.data[j].city;
+
+               cel = ro.insertCell(3);
+
+               cel.innerHTML = data.data[j].phone;
+
+            }
+
+         })
+
+
+      }
+
+      populateTable()
+
+   </script>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="index.html"><img src="images/log.png"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="serviceprovider.html">HOME</a>
+                  </li>
+                  
+                 
+                  <li class="nav-item">
+                     <a class="nav-link" href="members.html">VIEW MEMBERS</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="appoinment.html">VIEW APPOINMENTS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="news.html">LOGOUT</a>
+                 </li>
+                  
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <!-- header section end -->
+      <!-- news section start -->
+      <div class="news_section layout_padding">
+         <div id ="appTable" class="container">
+            
+           
+               <!--<div class="fields">
+                    <div>
+                    <div class="input-field">
+                        <label> Name</label>
+                        <input type="text" id="full_name">
+                    </div>
+                    <div class="input-field">
+                        <label>Booking Date</label>
+                        <input type="text" id="date">
+                    </div>
+                </div>
+                <div>
+                    
+                    <div class="input-field">
+                        <label>Phone Number</label>
+                        <input type="text" id="phn">
+                    </div></div>
+                     <div>
+                    <div class="input-field">
+                        <label>City</label>
+                        <input type="text">
+                    </div>
+                </div>
+                    <div class="input-field">
+                        <label>Remarks</label>
+                        <input type="text">
+                    </div>
+                </div>
+                
+            </div>  
+        </div>
+    </div>  
+            
+            
+          
+               
+         
+                
+
+                     </div>
+                  </div>-->
+                  <TABLE BORDER="1">
+                  </TABLE>
+                 
+                  
+                     
+                  </div>
+              
+            
+      </div>
+      <!-- news section end -->
+      <!-- footer section start -->
+      
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   </body>
+</html>

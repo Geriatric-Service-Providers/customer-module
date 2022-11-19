@@ -1,23 +1,22 @@
 import 'package:get/state_manager.dart';
 import 'package:shopx/services/remote_services.dart';
-import 'package:shopx/views/globals.dart';
 
-class CategoryController extends GetxController {
+class DashboardController extends GetxController {
   var isLoading = true.obs;
-  var productList = [].obs;
+  var serviceProviders = [].obs;
 
   @override
   void onInit() {
-    fetchCategories();
+    dashboard();
     super.onInit();
   }
 
-  void fetchCategories() async {
+  void dashboard() async {
     try {
       isLoading(true);
-      var products = await RemoteServices.fetchCategories();
-      if (products != null) {
-        productList.value = products;
+      var providers = await RemoteServices.fetchOrganization();
+      if (providers != null) {
+        serviceProviders.value = providers;
       }
     } finally {
       isLoading(false);
@@ -25,175 +24,22 @@ class CategoryController extends GetxController {
   }
 }
 
-class BannerController extends GetxController {
+class MemberController extends GetxController {
   var isLoading = true.obs;
-  var productList = [].obs;
+  var serviceProviders = [].obs;
 
   @override
   void onInit() {
-    fetchBanners();
+    members();
     super.onInit();
   }
 
-  void fetchBanners() async {
+  void members() async {
     try {
       isLoading(true);
-      var products = await RemoteServices.fetchBanner();
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class BannerProductController extends GetxController {
-  var isLoading = true.obs;
-  var productList = [].obs;
-
-  @override
-  void onInit() {
-    fetchBannerProducts();
-    super.onInit();
-  }
-
-  void fetchBannerProducts() async {
-    try {
-      isLoading(true);
-      var products = await RemoteServices.fetchBannerProducts();
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class SubCategoryController extends GetxController {
-  var isLoading = true.obs;
-  var productList = [].obs;
-
-  @override
-  void onInit() {
-    fetchSubCategories(Globals.primary);
-    super.onInit();
-  }
-
-  void fetchSubCategories(id) async {
-    try {
-      isLoading(true);
-      var products = await RemoteServices.fetchSubCategories(id);
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class ProductController extends GetxController {
-  var isLoading = true.obs;
-  var productList = [].obs;
-
-  @override
-  void onInit() {
-    fetchProducts(Globals.primary);
-    super.onInit();
-  }
-
-  void fetchProducts(id) async {
-    try {
-      isLoading(true);
-      var products = await RemoteServices.fetchProducts(id);
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class CartController extends GetxController {
-  var isLoading = true.obs;
-  var productList = [].obs;
-
-  @override
-  void onInit() {
-    fetchCartProducts();
-    super.onInit();
-  }
-
-  void fetchCartProducts() async {
-    try {
-      isLoading(true);
-      var products = await RemoteServices.fetchCartProducts();
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class Controller extends GetxController {
-  var total = double.parse(Globals.cartotal).obs;
-  increment(value) {
-    total += value;
-  }
-
-  decrement(value) {
-    total -= value;
-  }
-
-  getVal() {
-    total.value = double.parse(Globals.cartotal);
-  }
-}
-
-class SearchController extends GetxController {
-  var isLoading = true.obs;
-  var productList = [].obs;
-
-  @override
-  void onInit() {
-    fetchSearchProducts();
-    super.onInit();
-  }
-
-  void fetchSearchProducts() async {
-    try {
-      isLoading(true);
-      var products = await RemoteServices.fetchSearchProducts();
-      if (products != null) {
-        productList.value = products;
-      }
-    } finally {
-      isLoading(false);
-    }
-  }
-}
-
-class PrevOrderController extends GetxController {
-  var isLoading = true.obs;
-  var orderList = [].obs;
-
-  @override
-  void onInit() {
-    fetchPrevOrders();
-    super.onInit();
-  }
-
-  void fetchPrevOrders() async {
-    try {
-      isLoading(true);
-      var orders = await RemoteServices.fetchPrevOrders();
-      if (orders != null) {
-        orderList.value = orders;
+      var providers = await RemoteServices.fetchOrganizationMembers();
+      if (providers != null) {
+        serviceProviders.value = providers;
       }
     } finally {
       isLoading(false);

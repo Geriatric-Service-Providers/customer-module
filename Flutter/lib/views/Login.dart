@@ -1,32 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopx/utils/styles.dart';
 import 'package:shopx/views/SignUp.dart';
 import 'package:shopx/services/remote_services.dart';
-// import 'package:shopx/views/globals.dart';
-import 'package:shopx/views/homepage.dart';
+
+// Login UI
 
 class Mobilenumber extends StatelessWidget {
-  void checkLogin(context) async {
-    final prefs = await SharedPreferences.getInstance();
-    final logged = prefs.getBool('isLoggedIn');
-    if (logged != null) {
-      final String phone = prefs.getString('phone');
-      RemoteServices.fetchToken(phone, context, true);
-    }
-  }
 
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
-  // static final validCharacters = RegExp(r'^[0-9]+$');
 
   @override
   Widget build(BuildContext context) {
-    // checkLogin(context);
-    // RemoteServices.fetchBanner();
-    // RemoteServices.fetchCategories();
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SafeArea(
@@ -35,7 +22,7 @@ class Mobilenumber extends StatelessWidget {
             Expanded(
               child: Container(
                   width: double.infinity,
-                  child: Image.asset('images/pailative.png')),
+                  child: Image.asset('images/logo.png')),
             ),
             Expanded(
               flex: 2,
@@ -90,7 +77,7 @@ class Mobilenumber extends StatelessWidget {
                         onPressed: () {
                           if (userNameController.text.length != 0 &&
                               passwordController.text.length != 0) {
-                            RemoteServices.fetchToken(userNameController.text,
+                            RemoteServices.login(userNameController.text,
                                 passwordController.text, context);
                           } else if (userNameController.text.length == 0) {
                             Get.snackbar("Failed", "Please Enter your Email");
@@ -107,8 +94,8 @@ class Mobilenumber extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.normal)),
                         ),
                         style: ElevatedButton.styleFrom(
-                          onPrimary: Colors.white,
-                          primary: Styles.primaryColor,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Styles.primaryColor,
                           elevation: 3.0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
@@ -140,7 +127,6 @@ class Mobilenumber extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(),
     );
   }
 }

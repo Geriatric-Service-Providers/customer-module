@@ -4,17 +4,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shopx/services/remote_services.dart';
 // import 'package:shopx/services/remote_services.dart';
 
+// Signup UI
+
 class Signup extends StatefulWidget {
   @override
   State<Signup> createState() => _SignupState();
 }
 
 class _SignupState extends State<Signup> {
+  final mobileController = TextEditingController();
   final nameController = TextEditingController();
   final ageController = TextEditingController();
   final emailController = TextEditingController();
-  final mobileController = TextEditingController();
-  final userNameController = TextEditingController();
+  final addressController = TextEditingController();
+  final cityController = TextEditingController();
+  final districtController = TextEditingController();
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,20 @@ class _SignupState extends State<Signup> {
                   padding: EdgeInsets.all(10.0),
                   child: Column(
                     children: [
+                      TextFormField(
+                        controller: mobileController,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            fillColor: Colors.grey[100],
+                            filled: true,
+                            hintText: "Mobile Number",
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10.0))),
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
                       TextFormField(
                         controller: nameController,
                         decoration: InputDecoration(
@@ -72,12 +90,11 @@ class _SignupState extends State<Signup> {
                         height: 15.0,
                       ),
                       TextFormField(
-                        controller: mobileController,
-                        keyboardType: TextInputType.number,
+                        controller: addressController,
                         decoration: InputDecoration(
                             fillColor: Colors.grey[100],
                             filled: true,
-                            hintText: "Mobile Number",
+                            hintText: "Address",
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10.0))),
@@ -86,12 +103,24 @@ class _SignupState extends State<Signup> {
                         height: 15.0,
                       ),
                       TextFormField(
-                        controller: userNameController,
-                        keyboardType: TextInputType.number,
+                        controller: cityController,
                         decoration: InputDecoration(
                             fillColor: Colors.grey[100],
                             filled: true,
-                            hintText: "Username",
+                            hintText: "City",
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10.0))),
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      TextFormField(
+                        controller: districtController,
+                        decoration: InputDecoration(
+                            fillColor: Colors.grey[100],
+                            filled: true,
+                            hintText: "District",
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10.0))),
@@ -124,13 +153,15 @@ class _SignupState extends State<Signup> {
                                     "Error", "Please Fill in the details");
                               } else {
                                 RemoteServices.signUp(
-                                    nameController.text,
-                                    ageController.text,
-                                    emailController.text,
-                                    mobileController.text,
-                                    userNameController.text,
-                                    passwordController.text,
-                                    );
+                                  nameController.text,
+                                  ageController.text,
+                                  emailController.text,
+                                  mobileController.text,
+                                  addressController.text,
+                                  cityController.text,
+                                  districtController.text,
+                                  passwordController.text,
+                                );
                               }
                             },
                             child: Padding(
@@ -141,8 +172,8 @@ class _SignupState extends State<Signup> {
                                       fontWeight: FontWeight.normal)),
                             ),
                             style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.white,
-                              primary: Colors.green[700],
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.green[700],
                               elevation: 3.0,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),

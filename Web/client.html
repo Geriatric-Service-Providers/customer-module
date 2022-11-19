@@ -1,0 +1,472 @@
+
+ <html>
+   <head>
+      <style>  
+          
+    
+                     
+                    
+            
+                         body{  
+                      font-family: Calibri, Helvetica, sans-serif;  
+                      background-color: lightblue;  
+                      padding: 100px; 
+                      background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("servicepage3.webp");
+                 
+                    }   
+                      
+                        .container{
+                            position: relative;
+                            max-width: 900px;
+                            width: 100%;
+                            background-color: #ffff;
+                            border-radius: 6px;
+                            padding: 30px;
+                            margin: 0 15px;
+                            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                        }
+                        .container header{
+                            position: relative;
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: #333;
+                        }
+                        .container header::before{
+                            position: absolute;
+                            content: "";
+                            bottom: 2px;
+                            height: 3px;
+                            left: 0;
+                            width: 27px;
+                            background: radius 8px;
+                        }
+                        .container form{
+                            position: relative;
+                            min-height: 490px;
+                            background-color: #f2f2f2;
+                            margin-top: 16px;
+                            
+                        
+                        }
+                        .container .myForm .details{
+                            margin-top: 10px;
+                        }
+                        .container .myForm .title{
+                            display: block;
+                            font-size: 16px;
+                            font-weight: 500;
+                            margin: 6px 0;
+                            color: rgb(3, 8, 2);
+                        }
+                        .container .myForm .fields{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                        }
+                        .myForm .fields .input-field{
+                            display: flex;
+                            width: calc(100% / 3 - 15px);
+                            flex-direction: column;
+                        }
+                        .input-field input{
+                            height: 42px;
+                        }
+                        .input-field label{
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #2e2e2e;
+                        }
+                        .input-field input{
+                            outline: none;
+                            border: 1px solid #aaa;
+                            border-radius: 5px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #333;
+                            padding: 0 15px;
+                            height: 42px;
+                            margin: 8px 0;
+                        }
+                        
+                        .input-field input::is(:focus, :valid){
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+                        }
+                        .addbtn{
+                            background-color: #4CAF50; 
+                            border-radius: 5px; 
+                      color: white;  
+                      padding: 12px 10px;  
+                      margin: 18px 0;  
+                      border: none;  
+                      cursor: pointer;  
+                      width: 10%; 
+                      float: left; 
+                      opacity: 0.9;   
+                    }
+                    .registerbtn {  
+                      background-color: #4CAF50;
+                      border-radius: 5px;  
+                      color: white;  
+                      padding: 12px 10px;  
+                      margin: 18px 0;  
+                      border: none;  
+                      cursor: pointer;  
+                      width: 10%; 
+                      float: right; 
+                      opacity: 0.9;  
+                    }  
+                    .registerbtn:hover {  
+                      opacity: 1;  
+                    }  
+                           
+                </style>
+        </head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Client</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   
+   
+      <!-- header section start -->
+      <div class="header_section">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="index.html"><img src="images/log.png"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="health.html">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="news.html">SIGN IN</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="client.html">REGISTER</a>
+                  </li>
+               
+                  <li class="nav-item">
+                     <a class="nav-link" href="contact.html">CONTACT US</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <!-- header section end -->
+      <!-- client section start -->
+      <div class="client_section layout_padding">
+         <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                 
+                    <script>
+
+                        var i = 0;
+
+                        async function signup(){
+
+                        data = {
+                            'userType' : 'organization',
+                        }
+
+                        members = []
+
+                        var organization_name = this.document.getElementById('orga_name').value
+                        
+                        var email = this.document.getElementById('emaail').value
+                        
+                        var phone = this.document.getElementById('phn').value
+                        
+                        var services = this.document.getElementById('services').value
+                        
+                        var address = this.document.getElementById('address').value
+                        
+                        var city = this.document.getElementById('city').value
+
+                        var district = this.document.getElementById('district').value
+
+                        var password = this.document.getElementById('password').value
+
+                        data['name'] = organization_name
+
+                        data['email'] = email
+
+                        data['phone'] = phone
+
+                        data['services'] = services
+
+                        data['address'] = address
+
+                        data['city'] = city
+
+                        data['district'] = district
+
+                        data['password'] = password
+
+                        members.push({
+                            'name':this.document.getElementById('full_name').value,
+                            'email':this.document.getElementById('email').value,
+                            'qualification':this.document.getElementById('qualification').value,
+                            'skills':this.document.getElementById('skills').value,
+                            'availTime':this.document.getElementById('availTime').value,
+                            'phone':this.document.getElementById('member_phn').value,
+                            'address':this.document.getElementById('member_address').value,
+                        })
+
+                        if(i>0)
+                        for(j=1;j<=i;j++){
+                            elementId = "member"+j
+                            members.push({
+                            'name':this.document.getElementById(elementId).children.item(1).children.item(0).children.item(1).value,
+                            'email':this.document.getElementById(elementId).children.item(1).children.item(1).children.item(1).value,
+                            'qualification':this.document.getElementById(elementId).children.item(1).children.item(2).children.item(1).value,
+                            'skills':this.document.getElementById(elementId).children.item(1).children.item(3).children.item(1).value,
+                            'availTime':this.document.getElementById(elementId).children.item(1).children.item(4).children.item(1).value,
+                            'phone':this.document.getElementById(elementId).children.item(1).children.item(5).children.item(1).value,
+                            'address':this.document.getElementById(elementId).children.item(1).children.item(6).children.item(1).value,
+                            })
+                        }
+
+                        data['members'] = members
+
+                        const url = "http://127.0.0.1:8000/registration/" 
+                        
+                        var response = await fetch (url, {
+                            method:'POST',
+                            headers:{
+                                'Content-Type':'application/json'
+                            },
+                            body:JSON.stringify(data)
+                        }).then((response)=>response.json()).then((data)=>{
+                            console.log(data)
+                            alert("Signup Successfull")
+                            // window.location.reload()
+                        }
+                        )
+
+                        }
+
+                        function fun()
+                        {
+                            var original = document.getElementById('member');
+                            var clone = original.cloneNode(true); // "deep" clone
+                            clone.id = "member" + ++i;
+                            
+                            // or clone.id = ""; if the divs don't need an ID
+                            original.parentNode.appendChild(clone);
+
+                        }
+
+                        function validate(){
+                           var passwordd=document.getElementById('password').value ;
+                           var organization_name=document.getElementById('org_name').value;
+                           var fullname=document.getElementById('full_name').value;
+                           var phonee=document.getElementById('phn').value;
+                           if(organization_name=="")
+                           {
+                               alert("Fill the Organization name");
+                           }
+                           if(fullname=="")
+                           {
+                               alert("Fill the Organization name");
+                           }
+                           if(phonee=="")
+                           {
+                               alert("Fill the Phone number");
+                           }
+                           else if(phonee.length<10)
+                           {
+                               alert("Enter valid phone number");
+                           }
+                           if(passwordd=="")
+                           {
+                               alert("fill password");
+                           }
+                           else if(passwordd.length<6)
+                           {
+                               alert("enter a valid password");
+                           }
+                  
+                        }
+
+                    </script> 
+            
+                    <body>
+                        <div class="container">
+                            <header>Registration Form</header>
+                            <div class="myForm">
+                                <div class="form first">
+                                    <div class="Organizational"><br>
+                                        <span class="title"><b>Organization Details</b></span>
+                                        <div class="fields">
+                                            <div class="input-field">
+                                                <label>Organization Name</label>
+                                                <input type="text" id="orga_name" placeholder="Organization name" required>
+                                            </div>
+                                            <div class="input-field">
+                                                <label>Email</label>
+                                                <input type="text" id="emaail" placeholder="Email" required>
+                                            </div>
+                                            <div class="input-field">
+                                                <label>Phone Number</label>
+                                                <input type="text" id="phn" placeholder="Phone Number" required>
+                                            </div>
+                                        <!-- </div>
+                                        <label> Services</label>  
+                                        <label>Hospice Care at Home </label><input type="checkbox" id="s1" name="Hospice Care at Home" value="Services">
+                                        <label>Hospice Interdisciplinary Care Team</label><input type="checkbox" id="s2" name="Hospice Interdisciplinary Care Team" value="Services">
+                                        <label>Vitals Examination</label><input type="checkbox" id="s3" name="Vitals Examination" value="Services">
+                                        <label>Inpatient Hospice Care</label><input type="checkbox" id="s4" name="Inpatient Hospice Care" value="Services"> -->
+                                         <!-- <label>Emotional and Spiritual Care</label><input type="checkbox" id="s5" name="Emotional and Spiritual Care" value="Services"> -->
+                    
+                    
+                                            <!-- </div>   -->
+                                            <div class="input-field">
+                                                <!-- <label>   
+                                                    Number Of Members  
+                                                    </label>   
+                                                    <input type="text" id="no_of_mem" placeholder="Number Of Members">     -->
+                                                    <!-- <select>  
+                                                    <option value="Number Of Members">Number Of Members</option>  
+                                                    <option value="1">1</option>  
+                                                    <option value="2">2</option>  
+                                                    <option value="3">3</option>  
+                                                    <option value="4">4</option>  
+                                                    <option value="5">5</option>  
+                                                    <option value="6">6</option> 
+                                                    <option value="7">7</option>  
+                                                    <option value="8">8</option> 
+                                                    </select>   -->
+                                                    </div>  
+                                                    <div class="input-field">
+                                                        <label>Services</label>
+                                                        <input type="text"  placeholder="Services" id="services" required>
+                                                    </div>
+                                                    <div class="input-field">
+                                                        <label>Address</label>
+                                                        <input type="text" placeholder="Address" id="address" required>
+                                                    </div>
+                                                    <div class="input-field">
+                                                        <label>City</label>
+                                                        <input type="text" placeholder="City" id="city" required>
+                                                    </div>
+                                                    <div class="input-field">
+                                                        <label>District</label>
+                                                        <input type="text" placeholder="District" id="district" required>
+                                                    </div>
+                                                    <div class="input-field">
+                                                        <label>Password</label>
+                                                        <input type="password" id="password" placeholder="Password Eg:Aabb@123" id="password" required>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="member">
+                                        <div id="member">
+                                            <span class="title"><b>Members Details</b></span>
+                                            <div class="fields">
+                                                <div class="input-field">
+                                                    <label> Full Name</label>
+                                                    <input type="text" id="full_name" id="member_name" placeholder="Name" required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Email</label>
+                                                    <input type="text" id="email" placeholder="Email" required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Qualification</label>
+                                                    <input type="text" name="Qualification" placeholder="Qualification" id="qualification" size="10" required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Skills</label>
+                                                    <input type="text" name="Skills" placeholder="Skills" id="skills" size="10" required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Available Time</label>
+                                                    <input type="text" placeholder="Available Time"  id="availTime" required>
+                                                </div>
+                                                <!-- <div class="gender-details">
+                                                    <input type="radio" class="gender" id="dot-1">
+                                                    <input type="radio" class="gender" id="dot-2">
+                                                    <input type="radio" class="gender" id="dot-3">
+                                                    <span class="gender-title">Gender</span>
+                                                <div class="category">
+                                                    <label for="#">
+                                                        <input type="radio" class="gender" id="dot-1">
+                                                        <span class="dot one"></span>
+                                                        <span class="gender">Male</span>
+                                                    </label>
+                                                    <label for="#">
+                                                        <input type="radio" class="gender" id="dot-2">
+                                                        <span class="dot two"></span>
+                                                        <span class="gender">Female</span>
+                                                    </label>
+                                                    <label for="#">
+                                                        <input type="radio" class="gender" id="dot-3">
+                                                        <span class="dot three"></span>
+                                                        <span class="gender">Prefer not to say</span>
+                                                    </label>
+                                                </div>
+                                                </div> -->
+                                                <div class="input-field">
+                                                    <label>Phone Number</label>
+                                                    <input type="text" id="member_phn" placeholder="Phone Number" required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Address</label>
+                                                    <input type="text" placeholder="Current Address" id = "member_address" required>
+                                                </div>
+                                                
+                                                <!-- <div class="input-field">
+                                                    <button type="submit" class="addbtn">ADD </button>   
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="input-field"> -->
+                                        <div>
+                                        <button type="submit" class="addbtn" onclick="fun()">ADD </button>
+                                        <button type="submit" class="registerbtn" onclick="signup()"  >REGISTER</button>
+                                    <!-- <button class="nextbutton">
+                                        <span class="btnText">Next</span>
+                                        <i class="uli uli navigator"></i>
+                                    </button> -->
+                                </div>
+                                </div>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </body>
+                </html>

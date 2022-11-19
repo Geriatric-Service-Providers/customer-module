@@ -39,6 +39,7 @@ dependencies:
   flutter_launcher_icons: ^0.9.2
   flutter_barcode_scanner: ^1.0.2
   google_fonts: ^2.1.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -65,17 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/profile_bg.png
-    - images/klikgrocer.png
-    - images/420211.jpg
-    - images/Profile.png
-    - images/Moideen.jpg
-    - images/car1.jfif
-    - images/car2.jfif
-    - images/download.jfif
-    - images/offer1.jfif
-    - images/offer2.jfif
-    - images/offer3.jfif
+    - images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
