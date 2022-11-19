@@ -15,7 +15,8 @@
                     margin: 10px 0px;   
                     border: none;   
                     cursor: pointer;   
-                     }   
+                     }
+
              form {   
                     border: 3px solid #f1f1f1;   
                 }   
@@ -98,7 +99,8 @@
             body:JSON.stringify(data)
          }).then((response)=>response = response.json()).then((data)=>{4
             sessionStorage.setItem("access", data.access);
-            window.location.href = 'serviceprovider.html';
+            if(sessionStorage.getItem("access")!=undefined)
+               window.location.href = 'serviceprovider.html';
          })
 
          

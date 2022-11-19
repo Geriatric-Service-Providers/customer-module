@@ -6,7 +6,6 @@ import 'package:shopx/controllers/controllers.dart';
 import 'package:shopx/widgets/bookButton.dart';
 import 'package:shopx/widgets/serviceTile.dart';
 
-
 // org view
 
 class HomePage extends StatefulWidget {
@@ -27,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromARGB(255, 136, 207, 226),
         body: Column(
           children: [
             Expanded(
@@ -46,8 +45,10 @@ class _HomePageState extends State<HomePage> {
                           child: DashboardTile(
                               dashboardController.serviceProviders[index]),
                           onTap: () {
-                            organizationId =
-                                dashboardController.serviceProviders[index].id.toString();
+                            organizationId = dashboardController
+                                .serviceProviders[index].id
+                                .toString();
+
                             Get.to(OrganizationDetails());
                             Get.reset();
                           });

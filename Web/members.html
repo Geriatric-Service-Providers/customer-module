@@ -16,6 +16,7 @@
                     border: none;   
                     cursor: pointer;   
                      }   
+
              form {   
                     border: 3px solid #f1f1f1;   
                 }   
@@ -96,6 +97,8 @@ var response = await fetch(url,{
    
    var table = this.document.getElementById("memTable").children.item(1);
 
+   // table.style.
+
    var row = table.insertRow(0);
 
    var cell1 = row.insertCell(0);
@@ -105,10 +108,14 @@ var response = await fetch(url,{
    var cell3 = row.insertCell(2);
 
    cell1.innerHTML = "Name";
+   cell1.style="background-color:#CFDE84 ";
+   
    
    cell2.innerHTML = "Qualification";
-   
+   cell2.style="background-color:#CFDE84";
+
    cell3.innerHTML = "Phone";
+   cell3.style="background-color:#CFDE84";
 
    var ro, cel;
 
@@ -117,20 +124,25 @@ var response = await fetch(url,{
       console.log(j)
 
       ro = table.insertRow(-1);
+      
 
       cel = ro.insertCell(0);
+      cel.style = "background-color:white";
 
       cel.innerHTML = data[j].name;
 
       cel = ro.insertCell(1);
-
+      cel.style = "background-color:white";
       cel.innerHTML = data[j].qualification;
 
       cel = ro.insertCell(2);
-
+      cel.style = "background-color:white";
+      cel.style.padding="15px";
       cel.innerHTML = data[j].phone;
 
    }
+
+   table.style.width = "100%"
 
 })
 
@@ -174,7 +186,7 @@ populateTable()
       <div class="news_section layout_padding">
          <div id = "memTable" class="container">
             
-               <header>Members Details</header>
+              <h1 style="color:#194F4E;"><header>Members Details</header></h1> 
         
                    <!-- <div class="member"> -->
                        <!-- <div id="member"> -->

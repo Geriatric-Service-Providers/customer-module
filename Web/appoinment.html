@@ -19,12 +19,6 @@
              form {   
                     border: 3px solid #f1f1f1;   
                 } 
-            
-                th tr {
-
-                  padding: 15px;
-                  
-                }
                 
              input[type=text], input[type=password] {   
                     width: 100%;   
@@ -97,6 +91,8 @@
             
             var table = this.document.getElementById("appTable").children.item(0);
 
+            
+
             var row = table.insertRow(0);
 
             var cell1 = row.insertCell(0);
@@ -108,13 +104,13 @@
             var cell4 = row.insertCell(3);
 
             cell1.innerHTML = "Name";
-            
+            cell1.style="background-color:#CFDE84 ";
             cell2.innerHTML = "Date";
-            
+            cell2.style="background-color:#CFDE84 ";
             cell3.innerHTML = "City";
-            
+            cell3.style="background-color:#CFDE84 ";
             cell4.innerHTML = "Phone";
-
+            cell4.style="background-color:#CFDE84 ";
             var ro, cel;
 
             for(j=0 ; j<data.data.length; j++){
@@ -124,23 +120,24 @@
                ro = table.insertRow(-1);
 
                cel = ro.insertCell(0);
-
+               cel.style = "background-color:white";
                cel.innerHTML = data.data[j].user;
 
                cel = ro.insertCell(1);
-
+               cel.style = "background-color:white";
                cel.innerHTML = data.data[j].date.substring(0, 10);
 
                cel = ro.insertCell(2);
-
+               cel.style = "background-color:white";
                cel.innerHTML = data.data[j].city;
 
                cel = ro.insertCell(3);
-
+               cel.style = "background-color:white";
                cel.innerHTML = data.data[j].phone;
 
             }
 
+            table.style.width = "100%"
          })
 
 
