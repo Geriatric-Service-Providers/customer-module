@@ -92,7 +92,7 @@ class MemberTile extends StatelessWidget {
             padding: EdgeInsets.all(10),
             height: MediaQuery.of(context).size.height * 0.05,
             child: Text(
-              "Phone : " + serviceProvider.phone,
+              "Skills : " + serviceProvider.skills,
               overflow: TextOverflow.ellipsis,
               style: GoogleFonts.openSans(
                 fontSize: 13,
